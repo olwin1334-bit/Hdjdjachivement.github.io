@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://www.gstatic.com"/>
+<link rel="dns-prefetch" href="https://www.gstatic.com"/>
+<link rel="preconnect" href="https://firestore.googleapis.com"/>
+<link rel="dns-prefetch" href="https://firestore.googleapis.com"/>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+<title>ZenithCrypto — ACHIEVEMENTS</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script>(function(){var _x=atob('eyJhcGlLZXkiOiJBSXphU3lDSFJ3cV9EMFdtODNmSTZNcEVwT20tZjlJaXBsZzdUNVEiLCJhdXRoRG9tYWluIjoidGl0YW4tYXBleC1tdWx0aXBsYXllci5maXJlYmFzZWFwcC5jb20iLCJwcm9qZWN0SWQiOiJ0aXRhbi1hcGV4LW11bHRpcGxheWVyIiwic3RvcmFnZUJ1Y2tldCI6InRpdGFuLWFwZXgtbXVsdGlwbGF5ZXIuZmlyZWJhc2VzdG9yYWdlLmFwcCIsIm1lc3NhZ2luZ1NlbmRlcklkIjoiNDEzODUwMDczNDgxIiwiYXBwSWQiOiIxOjQxMzg1MDA3MzQ4MTp3ZWI6ODM0ZGVmNTlmNDA3OTRkMjE4MDk1OCIsImRhdGFiYXNlVVJMIjoiaHR0cHM6Ly90aXRhbi1hcGV4LW11bHRpcGxheWVyLWRlZmF1bHQtcnRkYi5hc2lhLXNvdXRoZWFzdDEuZmlyZWJhc2VkYXRhYmFzZS5hcHAifQ==');try{window._FC=JSON.parse(_x);}catch(e){}})();
+var db=null,auth=null,FS=null,G={};</script>
+<script>(function(){var _t=null;window._showOffline=function(m){if(document.getElementById('_zco'))return;var d=document.createElement('div');d.id='_zco';d.style.cssText='position:fixed;inset:0;z-index:99999;background:#04060e;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:30px;text-align:center;font-family:Orbitron,monospace';d.innerHTML='<div style="font-size:3rem">📡</div><div style="font-size:.9rem;font-weight:900;color:#eaecf0;letter-spacing:2px">CONNECTION LOST</div><div style="font-size:.5rem;color:#6c7a96;line-height:2;max-width:260px">'+(m||'No internet')+'<br><span id="_zco_cd">Retrying in 5s...</span></div><button onclick="window._retryNow&&window._retryNow()" style="padding:11px 26px;border-radius:10px;border:1.5px solid rgba(79,142,247,.4);background:rgba(79,142,247,.1);color:#4f8ef7;font-size:.52rem;cursor:pointer;font-weight:700;font-family:Orbitron,monospace">RETRY NOW</button>';document.body.appendChild(d);var c=5;_t=setInterval(function(){c--;var r=document.getElementById('_zco_cd');if(r)r.textContent=c>0?'Retrying in '+c+'s...':'Retrying...';if(c<=0){clearInterval(_t);window._retryNow&&window._retryNow();}},1000);};window._hideOffline=function(){var d=document.getElementById('_zco');if(d)d.remove();if(_t)clearInterval(_t);};window.addEventListener('online',function(){window._hideOffline();});window.addEventListener('offline',function(){window._showOffline('Internet lost.');});window.addEventListener('error',function(e){e.preventDefault();return true;},true);window.addEventListener('unhandledrejection',function(e){e.preventDefault();});})();</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg:#04060e;--s1:#080d18;--s2:#0c1220;--s3:#111929;--a:#4f8ef7;--gold:#e8b84b;--green:#0ecb81;--red:#f6465d;--purple:#7c5df7;--t1:#eaecf0;--t2:#6c7a96;--t3:#2d3a55;--fhd:'Orbitron',monospace;--fmono:'JetBrains Mono',monospace;--topH:54px}
+html,body{visibility:visible;height:100%;background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif}
+#topbar{height:var(--topH);background:rgba(7,9,15,.96);border-bottom:1px solid rgba(0,212,255,.12);display:flex;align-items:center;padding:0 14px;gap:8px;position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(20px)}
+.back{width:34px;height:34px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:9px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+#main{margin-top:var(--topH);padding-bottom:80px}
+.tabs{display:flex;background:var(--s1);border-bottom:1px solid rgba(255,255,255,.05);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;padding:12px 16px;font-family:var(--fhd);font-size:.5rem;font-weight:700;color:var(--t3);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:.2s}
+.tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.hero{padding:22px 16px 16px;background:radial-gradient(ellipse 100% 60% at 50% 0%,rgba(232,184,75,.1),transparent 60%),var(--s1);border-bottom:1px solid rgba(232,184,75,.1);text-align:center}
+.progress-bar-wrap{background:var(--s2);border-radius:999px;height:8px;margin:8px 0 4px;overflow:hidden}
+.progress-bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--gold),var(--a));transition:width .6s ease}
+.ach-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 14px}
+.ach-card{background:var(--s1);border:1px solid rgba(255,255,255,.06);border-radius:13px;padding:13px;position:relative;overflow:hidden;transition:.15s;animation:fi .3s ease both}
+.ach-card.unlocked{border-color:rgba(232,184,75,.3);background:linear-gradient(135deg,rgba(232,184,75,.08),var(--s1))}
+.ach-card:active{transform:scale(.97)}
+.ach-icon{font-size:2rem;margin-bottom:6px}
+.ach-name{font-family:var(--fhd);font-size:.44rem;font-weight:900;color:var(--t1);margin-bottom:3px;line-height:1.3}
+.ach-desc{font-size:.44rem;color:var(--t2);line-height:1.5;margin-bottom:6px}
+.ach-reward{font-family:var(--fmono);font-size:.44rem;font-weight:700;color:var(--green)}
+.ach-lock{position:absolute;top:8px;right:8px;font-size:.7rem;opacity:.4}
+.ach-done{position:absolute;top:8px;right:8px;font-size:.8rem}
+.ach-prog{margin-top:6px}
+.spinner{width:22px;height:22px;border:2px solid rgba(232,184,75,.15);border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;margin:28px auto}
+.empty{text-align:center;padding:30px;color:var(--t3);font-family:var(--fhd);font-size:.52rem}
+@keyframes sp{to{transform:rotate(360deg)}}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div class="back" onclick="history.back()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></div>
+  <div style="font-family:var(--fhd);font-size:.72rem;font-weight:900;flex:1;letter-spacing:2px;background:linear-gradient(90deg,var(--gold),var(--a));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">ACHIEVEMENTS</div>
+  <div id="ach-count" style="font-family:var(--fhd);font-size:.38rem;color:var(--t3)">—</div>
+</div>
+<div id="main">
+  <div class="hero">
+    <div style="font-size:2.6rem;margin-bottom:8px">🏅</div>
+    <div style="font-family:var(--fhd);font-size:.9rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--a));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:3px">YOUR BADGES</div>
+    <div style="font-family:var(--fhd);font-size:.42rem;color:var(--t3);margin-top:4px;letter-spacing:2px">COMPLETE MILESTONES • EARN REWARDS</div>
+    <div style="margin:12px 0 4px;display:flex;align-items:center;gap:8px">
+      <div style="flex:1"><div class="progress-bar-wrap"><div class="progress-bar-fill" id="ach-bar" style="width:0%"></div></div></div>
+      <div style="font-family:var(--fhd);font-size:.4rem;color:var(--gold)" id="ach-pct">0%</div>
+    </div>
+  </div>
+  <div class="tabs" id="ach-tabs">
+    <div class="tab active" onclick="achTab(this,'all')">ALL</div>
+    <div class="tab" onclick="achTab(this,'trading')">⚡ TRADING</div>
+    <div class="tab" onclick="achTab(this,'mining')">⛏ MINING</div>
+    <div class="tab" onclick="achTab(this,'social')">👥 SOCIAL</div>
+    <div class="tab" onclick="achTab(this,'wealth')">💰 WEALTH</div>
+    <div class="tab" onclick="achTab(this,'collect')">🖼 COLLECT</div>
+  </div>
+  <div class="ach-grid" id="ach-grid"><div class="spinner"></div></div>
+</div>
+<script>
+var ZCS={restore:function(){try{var p=new URLSearchParams(window.location.search);var uid=p.get('uid');var s=p.get('s');if(s)try{Object.assign(G,JSON.parse(decodeURIComponent(s)));}catch(e){}if(uid&&uid!=='guest')G.uid=uid;}catch(e){}},sendReady:function(pg){try{if(window.parent!==window)window.parent.postMessage({type:'ZC_READY',page:pg},'*');}catch(e){}}};
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function toast(msg,type){var t=document.createElement('div');t.style.cssText='position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:'+(type==='error'?'#f6465d':type==='success'?'#0ecb81':'#4f8ef7')+';color:#fff;padding:10px 22px;border-radius:10px;font-family:Orbitron,monospace;font-size:.56rem;z-index:99999;font-weight:700';t.textContent=msg;document.body.appendChild(t);setTimeout(function(){t.remove();},2800);}
+function save(data){if(!db||!G.uid)return;db.collection('players').doc(G.uid).update(data).catch(function(){});}
+
+var ACHIEVEMENTS=[
+  {id:'first_trade',cat:'trading',icon:'⚡',name:'First Trade',desc:'Place your first trade',reward:0.1,xp:10,check:function(){return(G.totalTrades||G.wins||0)>=1},prog:function(){return{v:Math.min(1,G.totalTrades||G.wins||0),t:1}}},
+  {id:'trades_10',cat:'trading',icon:'📈',name:'Active Trader',desc:'Make 10 trades',reward:0.5,xp:25,check:function(){return(G.totalTrades||G.wins||0)>=10},prog:function(){return{v:Math.min(10,G.totalTrades||G.wins||0),t:10}}},
+  {id:'trades_50',cat:'trading',icon:'🚀',name:'Veteran Trader',desc:'Make 50 trades',reward:2,xp:50,check:function(){return(G.totalTrades||G.wins||0)>=50},prog:function(){return{v:Math.min(50,G.totalTrades||G.wins||0),t:50}}},
+  {id:'trades_200',cat:'trading',icon:'💹',name:'Market Master',desc:'Make 200 trades total',reward:10,xp:100,check:function(){return(G.totalTrades||G.wins||0)>=200},prog:function(){return{v:Math.min(200,G.totalTrades||G.wins||0),t:200}}},
+  {id:'win_streak_5',cat:'trading',icon:'🔥',name:'Hot Streak',desc:'Win 5 binary trades in a row',reward:1,xp:30,check:function(){return(G.bestStreak||0)>=5},prog:function(){return{v:Math.min(5,G.bestStreak||0),t:5}}},
+  {id:'first_miner',cat:'mining',icon:'⛏',name:'First Miner',desc:'Purchase your first miner',reward:0.1,xp:10,check:function(){return Object.values(G.upgrades||{}).some(function(v){return v>0})},prog:function(){return{v:Object.values(G.upgrades||{}).some(function(v){return v>0})?1:0,t:1}}},
+  {id:'solar_claim',cat:'mining',icon:'☀️',name:'Solar Starter',desc:'Claim your first mining reward',reward:0.05,xp:5,check:function(){return(G.totalMined||0)>0},prog:function(){return{v:(G.totalMined||0)>0?1:0,t:1}}},
+  {id:'mine_1',cat:'mining',icon:'💎',name:'Miner Earner',desc:'Mine $1 total',reward:0.2,xp:15,check:function(){return(G.totalMined||0)>=1},prog:function(){return{v:Math.min(1,G.totalMined||0),t:1}}},
+  {id:'mine_10',cat:'mining',icon:'🌟',name:'Mining Expert',desc:'Mine $10 total',reward:1,xp:40,check:function(){return(G.totalMined||0)>=10},prog:function(){return{v:Math.min(10,G.totalMined||0),t:10}}},
+  {id:'mine_100',cat:'mining',icon:'⚡',name:'Mining Legend',desc:'Mine $100 total',reward:5,xp:100,check:function(){return(G.totalMined||0)>=100},prog:function(){return{v:Math.min(100,G.totalMined||0),t:100}}},
+  {id:'refer_1',cat:'social',icon:'🤝',name:'Good Friend',desc:'Refer 1 player',reward:0,xp:20,check:function(){return(G.refCount||0)>=1},prog:function(){return{v:Math.min(1,G.refCount||0),t:1}}},
+  {id:'refer_5',cat:'social',icon:'👥',name:'Connector',desc:'Refer 5 players',reward:2,xp:60,check:function(){return(G.refCount||0)>=5},prog:function(){return{v:Math.min(5,G.refCount||0),t:5}}},
+  {id:'streak_7',cat:'social',icon:'🔥',name:'7 Day Streak',desc:'Login 7 days in a row',reward:0.5,xp:30,check:function(){return(G.streak||0)>=7},prog:function(){return{v:Math.min(7,G.streak||0),t:7}}},
+  {id:'streak_30',cat:'social',icon:'🏅',name:'Dedicated',desc:'Login 30 days in a row',reward:5,xp:100,check:function(){return(G.streak||0)>=30},prog:function(){return{v:Math.min(30,G.streak||0),t:30}}},
+  {id:'lv5',cat:'social',icon:'⭐',name:'Rising Star',desc:'Reach Level 5',reward:0.5,xp:20,check:function(){return(G.level||1)>=5},prog:function(){return{v:Math.min(5,G.level||1),t:5}}},
+  {id:'lv10',cat:'social',icon:'🌟',name:'Veteran',desc:'Reach Level 10',reward:2,xp:50,check:function(){return(G.level||1)>=10},prog:function(){return{v:Math.min(10,G.level||1),t:10}}},
+  {id:'lv20',cat:'social',icon:'👑',name:'Elite',desc:'Reach Level 20',reward:10,xp:150,check:function(){return(G.level||1)>=20},prog:function(){return{v:Math.min(20,G.level||1),t:20}}},
+  {id:'bal_10',cat:'wealth',icon:'💵',name:'First $10',desc:'Reach $10 balance',reward:0,xp:10,check:function(){return(G.bal||0)>=10},prog:function(){return{v:Math.min(10,G.bal||0),t:10}}},
+  {id:'bal_100',cat:'wealth',icon:'💰',name:'Century Mark',desc:'Reach $100 balance',reward:1,xp:30,check:function(){return(G.bal||0)>=100},prog:function(){return{v:Math.min(100,G.bal||0),t:100}}},
+  {id:'bal_1000',cat:'wealth',icon:'🏦',name:'Millionaire Path',desc:'Reach $1,000 balance',reward:10,xp:100,check:function(){return(G.bal||0)>=1000},prog:function(){return{v:Math.min(1000,G.bal||0),t:1000}}},
+  {id:'zenz_100',cat:'wealth',icon:'🪙',name:'ZENZ Collector',desc:'Own 100 ZENZ',reward:0,xp:20,check:function(){return(G.zenz||0)>=100},prog:function(){return{v:Math.min(100,G.zenz||0),t:100}}},
+  {id:'first_nft',cat:'collect',icon:'🖼',name:'NFT Owner',desc:'Buy your first NFT',reward:0.5,xp:20,check:function(){return(G.ownedNFTs||[]).length>=1},prog:function(){return{v:Math.min(1,(G.ownedNFTs||[]).length),t:1}}},
+  {id:'nft_5',cat:'collect',icon:'🎨',name:'NFT Collector',desc:'Own 5 NFTs',reward:3,xp:60,check:function(){return(G.ownedNFTs||[]).length>=5},prog:function(){return{v:Math.min(5,(G.ownedNFTs||[]).length),t:5}}},
+  {id:'first_spin',cat:'collect',icon:'🎰',name:'Lucky Spin',desc:'Spin the wheel once',reward:0,xp:5,check:function(){return(G.totalSpins||0)>=1},prog:function(){return{v:(G.totalSpins||0)>=1?1:0,t:1}}},
+];
+
+var _curCat='all';
+function achTab(el,cat){
+  document.querySelectorAll('#ach-tabs .tab').forEach(function(t){t.classList.remove('active');});
+  el.classList.add('active');_curCat=cat;renderAch();
+}
+
+function renderAch(){
+  var grid=document.getElementById('ach-grid');if(!grid)return;
+  var unlocked=G.achievements||[];
+  var filtered=_curCat==='all'?ACHIEVEMENTS:ACHIEVEMENTS.filter(function(a){return a.cat===_curCat;});
+  var unlockedCount=unlocked.length;
+  var total=ACHIEVEMENTS.length;
+  var pct=Math.round(unlockedCount/total*100);
+  var bar=document.getElementById('ach-bar');if(bar)bar.style.width=pct+'%';
+  var pctEl=document.getElementById('ach-pct');if(pctEl)pctEl.textContent=pct+'%';
+  var cnt=document.getElementById('ach-count');if(cnt)cnt.textContent=unlockedCount+'/'+total;
+  grid.innerHTML='';
+  grid.style.display='grid';
+  filtered.forEach(function(a,i){
+    var done=unlocked.indexOf(a.id)>=0;
+    var prog=a.prog();
+    var card=document.createElement('div');
+    card.className='ach-card'+(done?' unlocked':'');
+    card.style.animationDelay=(i*0.05)+'s';
+    var progPct=Math.round(prog.v/prog.t*100);
+    card.innerHTML='<div class="ach-icon" style="filter:'+(done?'none':'grayscale(1) opacity(.4)')+'">'+a.icon+'</div>'
+      +'<div class="ach-name">'+esc(a.name)+'</div>'
+      +'<div class="ach-desc">'+esc(a.desc)+'</div>'
+      +(a.reward>0?'<div class="ach-reward">+$'+a.reward.toFixed(2)+' +'+a.xp+' XP</div>':'<div style="font-family:var(--fmono);font-size:.42rem;color:var(--purple)">+'+a.xp+' XP</div>')
+      +'<div class="ach-prog"><div style="background:var(--s2);border-radius:999px;height:5px;margin-top:7px;overflow:hidden"><div style="height:100%;border-radius:999px;width:'+progPct+'%;background:'+(done?'var(--gold)':'var(--a)')+'"></div></div>'
+      +'<div style="font-family:var(--fhd);font-size:.3rem;color:var(--t3);margin-top:3px">'+prog.v+' / '+prog.t+'</div></div>';
+    if(done)card.innerHTML+='<div class="ach-done">✅</div>';
+    else card.innerHTML+='<div class="ach-lock">🔒</div>';
+    // Check and claim unlockable achievements
+    if(!done&&a.check()){
+      (function(ach,c){
+        c.style.cursor='pointer';
+        c.onclick=function(){claimAch(ach,c);};
+        c.style.borderColor='rgba(14,203,129,.4)';
+        c.style.background='linear-gradient(135deg,rgba(14,203,129,.1),var(--s1))';
+        var cl=c.querySelector('.ach-lock');if(cl)cl.textContent='🎁';
+      })(a,card);
+    }
+    grid.appendChild(card);
+  });
+}
+
+function claimAch(ach,card){
+  if(!G.uid||!db){toast('Log in first','error');return;}
+  var unlocked=G.achievements||[];
+  if(unlocked.indexOf(ach.id)>=0){toast('Already claimed','warn');return;}
+  if(!ach.check()){toast('Not yet unlocked','error');return;}
+  unlocked=unlocked.concat([ach.id]);
+  var updates={achievements:unlocked,xp:FS.FieldValue.increment(ach.xp)};
+  if(ach.reward>0)updates.bal=FS.FieldValue.increment(ach.reward);
+  db.collection('players').doc(G.uid).update(updates).then(function(){
+    G.achievements=unlocked;
+    G.xp=(G.xp||0)+ach.xp;
+    if(ach.reward>0){G.bal=(G.bal||0)+ach.reward;toast('🏅 '+ach.name+' — +$'+ach.reward.toFixed(2)+' +'+ach.xp+' XP','success');}
+    else toast('🏅 '+ach.name+' — +'+ach.xp+' XP','success');
+    renderAch();
+  }).catch(function(e){toast('Error: '+e.message,'error');});
+}
+
+(function(){
+  ZCS.restore();var _d=false;
+  window._retryNow=function(){window._hideOffline&&window._hideOffline();if(!_d)startAuth();else renderAch();};
+  function startAuth(){
+    window._hideOffline&&window._hideOffline();
+    if(typeof firebase==='undefined'){if(!window._fbT)window._fbT=0;window._fbT++;if(window._fbT>50){window._showOffline&&window._showOffline('Service unavailable.');return;}setTimeout(startAuth,30);return;}
+    if(!window.auth){try{if(!firebase.apps.length)firebase.initializeApp(window._FC||{});window.auth=firebase.auth();window.db=firebase.firestore();window.FS=firebase.firestore;db=window.db;auth=window.auth;FS=window.FS;}catch(e){setTimeout(startAuth,50);return;}}
+    auth.onAuthStateChanged(function(u){if(_d)return;_d=true;if(u)G.uid=u.uid;if(G.uid&&!G.isGuest){db.collection('players').doc(G.uid).get().then(function(s){if(s.exists)Object.assign(G,s.data());boot();}).catch(function(){window._showOffline&&window._showOffline('Could not reach server.');});}else boot();},function(){window._showOffline&&window._showOffline('Connection error.');});
+    setTimeout(function(){if(!_d){_d=true;boot();}},6000);
+  }
+  function boot(){ZCS.sendReady('achievements');setTimeout(renderAch,50);}
+  startAuth();
+})();
+</script>
+</body>
+</html>
